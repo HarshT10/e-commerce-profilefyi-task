@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node src/backend/server.js"
+  },
   "type": "module",
   "dependencies": {
     "bcryptjs": "^2.4.3",
