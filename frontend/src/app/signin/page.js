@@ -99,14 +99,14 @@ const SignIn = () => {
             <button
               type="submit"
               onClick={() => setIsSignUp(true)}
-              className="text-white px-4 py-2 rounded w-full bg-[#10A0A0] hover:bg-[#119393] transition-all duration-300 ease-out font-semibold"
+              className="text-white text-sm px-4 py-2 rounded w-full bg-[#10A0A0] hover:bg-[#119393] transition-all duration-300 ease-out font-semibold"
             >
               Sign Up
             </button>
             <button
               type="submit"
               onClick={() => setIsSignUp(false)}
-              className="text-white px-4 py-2 rounded w-full bg-[#10A0A0] hover:bg-[#119393] transition-all duration-300 ease-out font-semibold"
+              className="text-white text-sm px-4 py-2 rounded w-full bg-[#10A0A0] hover:bg-[#119393] transition-all duration-300 ease-out font-semibold"
             >
               Sign In
             </button>
