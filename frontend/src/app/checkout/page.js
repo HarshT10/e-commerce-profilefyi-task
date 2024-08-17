@@ -9,12 +9,14 @@ const Checkout = () => {
   const [success, setSuccess] = useState("");
 
   return (
-    <div className="w-[1200px] mx-auto h-screen">
+    <div className="p-5 mx-auto h-screen">
       <div className="flex justify-center mt-44 mb-20">
-        <p className="text-3xl font-bold">Your transaction was successful</p>
+        <p className="text-3xl text-center font-bold">
+          Your transaction was successful
+        </p>
       </div>
 
-      <div className="w-[800px] m-auto text-black flex-col">
+      <div className="md:w-[600px] m-auto text-black flex-col">
         {state.items.map((item) => (
           <div
             key={item.id}

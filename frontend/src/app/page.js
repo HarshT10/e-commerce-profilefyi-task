@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto px-20 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    <div className="container mx-auto px-10 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} addToCart={addToCart} />
       ))}

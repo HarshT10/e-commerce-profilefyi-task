@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCard = ({ product, addToCart }) => {
   return (
-    <div className="h-[400px] cursor-pointer border text-black bg-white p-5 rounded-lg shadow-md hover:-translate-y-1 ease-in duration-100">
+    <div className="h-[500px] cursor-pointer border text-black bg-white p-5 rounded-lg shadow-md hover:-translate-y-1 ease-in duration-100">
       <div className="h-full flex flex-col justify-between py-5">
         <img
           src={product.image}
