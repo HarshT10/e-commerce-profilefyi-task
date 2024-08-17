@@ -13,6 +13,13 @@ const SignIn = () => {
 
   const handleAuth = async (e) => {
     e.preventDefault();
+
+    // Check if password length is less than 8 characters
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long.");
+      return;
+    }
+
     const url = isSignUp
       ? "https://backend-ecommerce-profilefyi-task.onrender.com/api/users/register"
       : "https://backend-ecommerce-profilefyi-task.onrender.com/api/users/login";
@@ -39,7 +46,7 @@ const SignIn = () => {
           document.cookie = `username=${username}; path=/; expires=${new Date(
             Date.now() + 3600000
           ).toUTCString()}`;
-          window.localStorage.setItem("username", username); // Save in localStorage
+          window.localStorage.setItem("username", username);
           window.location.href = "/";
         }
         setError("");
@@ -74,10 +81,20 @@ const SignIn = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
-              className="text-black w-full p-1 mt-2 px-2 outline-0 border border-[#10A0A0] border-2 rounded-md shadow-lg"
+              className={`text-black w-full p-1 mt-2 px-2 outline-0 border border-[#10A0A0] border-2 rounded-md shadow-lg ${
+                password.length > 0 && password.length < 8
+                  ? "border-red-500"
+                  : ""
+              }`}
               required
             />
+            {password.length > 0 && password.length < 8 && (
+              <p className="text-red-500">
+                Password must be at least 8 characters long.
+              </p>
+            )}
           </div>
+
           <div className="flex gap-4">
             <button
               type="submit"

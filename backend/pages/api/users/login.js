@@ -1,5 +1,17 @@
+import jwt from "jsonwebtoken";
+import User from "./models/User"; // Adjust the import path as necessary
+
+const JWT_SECRET = "your_jwt_secret"; // Use a secure key
+
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
+
+  // Check if password length is less than 8 characters
+  if (password.length < 8) {
+    return res
+      .status(400)
+      .json({ error: "Password must be at least 8 characters long." });
+  }
 
   try {
     const user = await User.findOne({ username });
