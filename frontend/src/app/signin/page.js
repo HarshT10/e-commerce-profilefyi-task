@@ -59,9 +59,9 @@ const SignIn = () => {
   };
 
   return (
-    <div className="w-[600px] mx-auto h-[400px] mt-20">
+    <div className="md:w-[500px] mx-auto h-[400px] mt-20 p-5">
       <form onSubmit={handleAuth}>
-        <div className="w-[500px] mx-auto flex flex-col gap-5 text-[#10A0A0] bg-white p-20 rounded-xl shadow-lg">
+        <div className="flex flex-col gap-5 text-[#10A0A0] bg-white p-10 rounded-xl shadow-lg">
           <div>
             <h1 className="text-4xl text-center font-bold text-[#10A0A0] mb-12">
               {isSignUp ? "Sign Up" : "Sign In"}
