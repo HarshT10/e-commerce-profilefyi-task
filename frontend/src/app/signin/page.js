@@ -39,8 +39,8 @@ const SignIn = () => {
           document.cookie = `username=${username}; path=/; expires=${new Date(
             Date.now() + 3600000
           ).toUTCString()}`;
-          // Redirect to home page after successful sign-in
-          router.push("/");
+          window.localStorage.setItem("username", username); // Save in localStorage
+          window.location.href = "/";
         }
         setError("");
       } else {

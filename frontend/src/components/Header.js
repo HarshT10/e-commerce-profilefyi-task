@@ -16,16 +16,9 @@ const Header = () => {
   );
 
   useEffect(() => {
-    const getCookie = (name) => {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(";").shift().trim();
-    };
-
-    const usernameFromCookie = getCookie("username");
-    console.log("Username from cookie:", usernameFromCookie); // Debugging
-    if (usernameFromCookie) {
-      setUsername(usernameFromCookie);
+    const usernameFromLocalStorage = window.localStorage.getItem("username");
+    if (usernameFromLocalStorage) {
+      setUsername(usernameFromLocalStorage);
     }
   }, []);
 
@@ -33,6 +26,7 @@ const Header = () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
     document.cookie =
       "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+    window.localStorage.removeItem("username"); // Remove from localStorage
     setUsername(""); // Clear the username state
     window.location.href = "/"; // Redirect to home page
   };
