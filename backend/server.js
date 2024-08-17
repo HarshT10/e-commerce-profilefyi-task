@@ -4,8 +4,17 @@ import connectDB from "./utils/db.js";
 import userRoutes from "./routes/users.js";
 
 const app = express();
+
+// const corsOptions = {
+//   origin: "https://e-commerce-profilefyi-task.vercel.app/",
+//   methods: ["GET", "POST"],
+//   allowedHeaders: ["Content-Type", "Authorization"],
+// };
+
+// app.use(cors(corsOptions));
+
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: true }));
 
 // Connect to MongoDB
 connectDB();

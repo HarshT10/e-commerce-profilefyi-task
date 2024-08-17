@@ -1,8 +1,7 @@
-// src/app/signin/page.js
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
@@ -10,11 +9,12 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
+  const router = useRouter(); // Use Next.js router for redirection
 
   const handleAuth = async (e) => {
     e.preventDefault();
     const url = isSignUp
-      ? "https://https://backend-ecommerce-profilefyi-task.onrender.com/api/users/register"
+      ? "https://backend-ecommerce-profilefyi-task.onrender.com/api/users/register"
       : "https://backend-ecommerce-profilefyi-task.onrender.com/api/users/login";
 
     try {
@@ -40,7 +40,7 @@ const SignIn = () => {
             Date.now() + 3600000
           ).toUTCString()}`;
           // Redirect to home page after successful sign-in
-          window.location.href = "/";
+          router.push("/");
         }
         setError("");
       } else {
