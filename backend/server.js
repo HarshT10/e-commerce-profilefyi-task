@@ -13,6 +13,10 @@ connectDB();
 // Use routes
 app.use("/api/users", userRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
