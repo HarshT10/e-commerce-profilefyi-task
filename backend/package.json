@@ -1,6 +1,9 @@
 {
+  "name": "backend-ecommerce-shopping-cart",
+  "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/backend/server.js"
+    "start": "node server.js"
   },
   "type": "module",
   "dependencies": {

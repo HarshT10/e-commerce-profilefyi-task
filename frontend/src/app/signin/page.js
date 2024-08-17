@@ -14,8 +14,8 @@ const SignIn = () => {
   const handleAuth = async (e) => {
     e.preventDefault();
     const url = isSignUp
-      ? "http://localhost:5000/api/users/register"
-      : "http://localhost:5000/api/users/login";
+      ? "https://backend-ecommerce-profilefyi-task-1.onrender.com/api/users/register"
+      : "https://backend-ecommerce-profilefyi-task-1.onrender.com/api/users/login";
 
     try {
       const response = await fetch(url, {
